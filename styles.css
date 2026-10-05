@@ -211,6 +211,9 @@ main {
 	font-size: 22px;
 	letter-spacing: -0.035em;
 }
+.project-copy {
+	min-width: 0;
+}
 .project-copy p {
 	max-width: 620px;
 	margin: 0;
@@ -229,25 +232,36 @@ main {
 
 @media (max-width: 640px) {
 	main {
-		width: min(100% - 30px, 1040px);
+		width: min(100% - 32px, 1040px);
 		justify-content: flex-start;
 	}
 	.hero {
-		padding: 44px 0 40px;
+		padding: 28px 0 24px;
 	}
 	.hero h1 {
-		font-size: 36px;
+		max-width: 390px;
+		font-size: clamp(32px, 9.5vw, 38px);
+		line-height: 1.02;
+		white-space: normal;
+	}
+	.summary {
+		max-width: 340px;
 	}
 	.projects {
-		padding: 30px 0 40px;
+		padding: 18px 0 32px;
 	}
 	.project-card {
+		position: relative;
 		padding: 24px;
-		grid-template-columns: auto 1fr;
-		gap: 18px;
+		grid-template-columns: 1fr;
+		gap: 16px;
+		border-radius: 20px;
 	}
 	.project-arrow {
-		display: none;
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		display: block;
 	}
 	.project-icon {
 		width: 52px;
@@ -269,6 +283,34 @@ main {
 	.project-icon i:nth-child(3) {
 		top: 28px;
 		left: 28px;
+	}
+	.project-copy h3 {
+		max-width: 300px;
+		font-size: 20px;
+		line-height: 1.12;
+	}
+	.project-copy p {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 360px) {
+	main {
+		width: calc(100% - 24px);
+	}
+	.hero h1 {
+		font-size: 32px;
+	}
+	.hero > span,
+	.tag {
+		letter-spacing: 0.09em;
+	}
+	.project-card {
+		padding: 20px;
+	}
+	.project-arrow {
+		top: 20px;
+		right: 20px;
 	}
 }
 
